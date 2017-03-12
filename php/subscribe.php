@@ -5,7 +5,7 @@ if ( isset( $_POST['newsletter_submit'] ) ) {
 
 	// Check email input field
 	if ( trim( $_POST['newsletter_email'] ) === '' )
-		$newsletter_errors[] = 'Email address is required';
+		$newsletter_errors[] = 'Email Obrigatório';
 	elseif ( !preg_match( "/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,4}$/i", trim( $_POST['newsletter_email'] ) ) )
 		$newsletter_errors[] = 'Email address is not valid'; 
 	else
@@ -13,7 +13,7 @@ if ( isset( $_POST['newsletter_submit'] ) ) {
 	
 	// Send email if no input errors
 	if ( empty( $newsletter_errors ) ) {
-		$email_to = "example@example.com"; // Change to your own email address
+		$email_to = "vitor.rocha81@bol.com.br"; // Change to your own email address
 		$subject = "Newsletter Subscription";
 		$body = "Subscriber details: " . $newsletter_email . "\r\n";
 		$headers = "Newsletter Subscription <" . $email_to . ">\r\nReply-To: " . $newsletter_email . "\r\n";
